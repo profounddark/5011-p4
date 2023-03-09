@@ -116,16 +116,51 @@ public:
      * @param compareObject the DuelingJP to compare to.
      * @return true if equal, false otherwise.
      */
-    bool operator==(const DuelingJP& compareObject);
+    bool operator==(const DuelingJP& compareObject) const;
 
     /**
      * Compares two DuelingJP objects. Two DuelingJP objects are considered
-     * equal if they have the same number of JumpPrime elements and the
-     * ordered elements all have the same encapsulated value.
+     * equal if they have the same number of JumpPrime elements.
      * @param compareObject the DuelingJP to compare to.
      * @return true if not equal, false otherwise.
      */
-    bool operator!=(const DuelingJP& compareObject);
+    bool operator!=(const DuelingJP& compareObject) const;
+
+    /**
+     * Compares two DuelingJP objects. A DuelingJP object is considered
+     * greater than another if it has a greater number of JumpPrime elements.
+     * @param compareObject the object to compare
+     * @return true if the LHS is greater in size, false otherwise
+     */
+    bool operator>(const DuelingJP& compareObject) const;
+
+    /**
+     * Compares two DuelingJP objects. A DuelingJP object is considered
+     * greater than or equal to another if it has a greater than or equal
+     * number of JumpPrime elements.
+     * @param compareObject the object to compare
+     * @return true if the LHS is greater than or equal in size, false otherwise
+     */
+    bool operator>=(const DuelingJP& compareObject) const;
+
+    /**
+     * Compares two DuelingJP objects. A DuelingJP object is considered
+     * lesser than another if it has a lesser number of JumpPrime elements.
+     * @param compareObject the object to compare
+     * @return true if the LHS is lesser in size, false otherwise
+     */
+    bool operator<(const DuelingJP& compareObject) const;
+
+    /**
+     * Compares two DuelingJP objects. A DuelingJP object is considered
+     * less than or equal to another if it has a less than or equal
+     * number of JumpPrime elements.
+     * @param compareObject the object to compare
+     * @return true if the LHS is less than or equal in size, false otherwise
+     */
+    bool operator<=(const DuelingJP& compareObject) const;
+
+
 
     /// countCollisions will run a single pass test through the list of
     /// JumpPrime objects, identifying any instances where two objects have
