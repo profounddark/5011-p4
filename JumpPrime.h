@@ -153,12 +153,39 @@ public:
     bool operator!=(const JumpPrime &jumpCompare) const;
 
 
-    // TODO: write comments for methods
+    /**
+     * Compares two JumpPrime objects. A JumpPrime object is greater
+     * than another if the encapsulated number is greater.
+     * @param jumpCompare the JumpPrime object to compare to.
+     * @return true if LHS is greater, false otherwise
+     */
     bool operator>(const JumpPrime &jumpCompare) const;
-    bool operator>=(const JumpPrime &jumpCompare) const;
-    bool operator<(const JumpPrime &jumpCompare) const;
-    bool operator<=(const JumpPrime &jumpCompare) const;
 
+    /**
+     * Compares two JumpPrime objects. A JumpPrime object is greater
+     * than or equql to another if the encapsulated number is greater
+     * than or equal to anoter.
+     * @param jumpCompare the JumpPrime object to compare to.
+     * @return true if LHS is greater than or equal, false otherwise
+     */
+    bool operator>=(const JumpPrime &jumpCompare) const;
+
+    /**
+     * Compares two JumpPrime objects. A JumpPrime object is less
+     * than another if the encapsulated number is less.
+     * @param jumpCompare the JumpPrime object to compare to.
+     * @return true if LHS is lesser, false otherwise
+     */
+    bool operator<(const JumpPrime &jumpCompare) const;
+
+    /**
+     * Compares two JumpPrime objects. A JumpPrime object is less
+     * than or equql to another if the encapsulated number is less
+     * than or equal to anoter.
+     * @param jumpCompare the JumpPrime object to compare to.
+     * @return true if LHS is less than or equal, false otherwise
+     */
+    bool operator<=(const JumpPrime &jumpCompare) const;
 
     /**
      * operator+ adds an integer to the JumpPrime object. This
