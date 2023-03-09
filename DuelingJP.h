@@ -109,7 +109,23 @@ public:
     /// @return A pointer to the DuelingJP object with the content.
     DuelingJP &operator=(DuelingJP && sourceObject);
 
-    bool operator==(const DuelingJP& sourceObject);
+    /**
+     * Compares two DuelingJP objects. Two DuelingJP objects are considered
+     * equal if they have the same number of JumpPrime elements and the
+     * ordered elements all have the same encapsulated value.
+     * @param compareObject the DuelingJP to compare to.
+     * @return true if equal, false otherwise.
+     */
+    bool operator==(const DuelingJP& compareObject);
+
+    /**
+     * Compares two DuelingJP objects. Two DuelingJP objects are considered
+     * equal if they have the same number of JumpPrime elements and the
+     * ordered elements all have the same encapsulated value.
+     * @param compareObject the DuelingJP to compare to.
+     * @return true if not equal, false otherwise.
+     */
+    bool operator!=(const DuelingJP& compareObject);
 
     /// countCollisions will run a single pass test through the list of
     /// JumpPrime objects, identifying any instances where two objects have

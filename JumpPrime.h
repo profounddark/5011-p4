@@ -137,13 +137,19 @@ public:
               unsigned int jumpBound = DEFAULT_JUMP_BOUND);
 
     /**
-     * operator== compares two JumpPrime objects. Two JumpPrime objects
+     * Compares two JumpPrime objects. Two JumpPrime objects
      * are equal if they currently encapsulate the same number.
      * @param jumpCompare the JumpPrime object to compare to.
      * @return true if equal, false otherwise
      */
     bool operator==(JumpPrime const& jumpCompare) const;
 
+    /**
+     * Compares two JumpPrime objects. Two JumpPrime objects
+     * are equal if they currently encapsulate the same number.
+     * @param jumpCompare the JumpPrime object to compare to.
+     * @return true if not equal, false otherwise
+     */
     bool operator!=(const JumpPrime &jumpCompare) const;
 
 
