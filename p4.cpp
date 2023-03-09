@@ -58,7 +58,28 @@ void jumpPrimeTest() {
 
     printSeparator();
 
-    // do some other adds, I guess?
+    cout << "Testing int + JP." << endl;
+    cout << "Adding " << TEST_VALUE_1 << " JP object to " << ADD_VALUE
+        << " integer." << endl;
+    testJP = ADD_VALUE + jp1;
+    jumpValueOutput(testJP);
+
+    printSeparator();
+
+    cout << "Testing comparison." << endl;
+    cout << "Comparing " << TEST_VALUE_1 << " JP object to " << TEST_VALUE_2
+        << " JP object." << endl;
+    cout << "Test equal: " << (jp1 == jp2) << endl;
+    cout << "Test not-equal: " << (jp1 != jp2) << endl;
+
+    printSeparator();
+
+    cout << "Testing comparison (#2)." << endl;
+    cout << "Comparing " << TEST_VALUE_1 << " JP object to " << TEST_VALUE_1
+        << " JP object." << endl;
+    testJP = JumpPrime(TEST_VALUE_1);
+    cout << "Test equal: " << (jp1 == testJP) << endl;
+    cout << "Test not-equal: " << (jp1 != testJP) << endl;
 
 }
 

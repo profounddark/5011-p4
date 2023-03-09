@@ -75,6 +75,18 @@ JumpPrime::JumpPrime(unsigned int initValue, unsigned int jumpBound) {
     }
 }
 
+bool JumpPrime::operator==(const JumpPrime &jumpCompare) const {
+    if (this->mainNumber == jumpCompare.mainNumber) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+bool JumpPrime::operator!=(const JumpPrime &jumpCompare) const {
+    return !(*this == jumpCompare);
+}
+
 JumpPrime JumpPrime::operator+(int addNumber) {
     unsigned int tempValue;
 
@@ -197,9 +209,21 @@ bool JumpPrime::isDisabled() {
     return (currentState == Failed);
 }
 
-unsigned int JumpPrime::getCurrentValue() {
+unsigned int JumpPrime::getCurrentValue() const {
     return mainNumber;
 }
+
+JumpPrime operator+(int addNumber, const JumpPrime &jumpAdd) {
+    unsigned int newValue = jumpAdd.mainNumber + addNumber;
+
+    JumpPrime newJP(newValue);
+
+    return newJP;
+}
+
+
+
+
 
 
 

@@ -137,6 +137,17 @@ public:
               unsigned int jumpBound = DEFAULT_JUMP_BOUND);
 
     /**
+     * operator== compares two JumpPrime objects. Two JumpPrime objects
+     * are equal if they currently encapsulate the same number.
+     * @param jumpCompare the JumpPrime object to compare to.
+     * @return true if equal, false otherwise
+     */
+    bool operator==(JumpPrime const& jumpCompare) const;
+
+    bool operator!=(const JumpPrime &jumpCompare) const;
+
+
+    /**
      * operator+ adds an integer to the JumpPrime object. This
      * returns a new JumpPrime object that has the sum of the encapsulated
      * number and the integer as its seed.
@@ -155,6 +166,18 @@ public:
      * encapsulated numbers.
      */
     JumpPrime operator+(JumpPrime const& jumpAdd);
+
+
+    /**
+     * operator+ adds a JumpPrime object to an integer. This returns a new
+     * JumpPrime object that has teh sum of the encapsulated number
+     * and the integer as its seed.
+     * @param addNumber the integer to add
+     * @param jumpAdd the JumpPrime object to add
+     * @return a JumpPrime object that encapsulates the sum of the integer and
+     * the encapsulated JumpPrime.
+     */
+    friend JumpPrime operator+(int addNumber, JumpPrime const& jumpAdd);
 
     /**
      * operator+= adds an integer to the JumpPrime object and adds it to
@@ -235,7 +258,7 @@ public:
      * set value. After a jump, this is the new jumped-to value.
      * @return the current value encapsulated by the JumpPrime object.
      */
-    unsigned int getCurrentValue();
+    unsigned int getCurrentValue() const;
 
 
 };
