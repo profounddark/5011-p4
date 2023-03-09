@@ -7,7 +7,7 @@
 
 /*
  * The JumpPrime object encapsulates a positive integer that must be at
- * least 4 digits long. The user can query the object for the two nearest
+ * least 3 digits long. The user can query the object for the two nearest
  * Prime numbers (either higher or lower). After a set number of queries (based
  * on the distance between the base integer and the farther of the two nearest
  * primes), the JumpPrime object will "jump" to a new base number a set
@@ -42,6 +42,9 @@
  * next higher prime plus the default jump value. For a jump in the negative
  * direction, it jumps to the next lower prime minus the default jump value.
  * 3. The default jump value is specified as a class constant (here, 100).
+ * 4. JumpPrime objects can be added to one another. Adding one JumpPrime
+ * object to another increases the encapsulated number. It also resets
+ * object (because I don't want to deal with it).
  */
 
 /// The JumpPrime class encapsulates a positive integer and provides the
@@ -58,7 +61,14 @@ class JumpPrime {
     static const unsigned int DEFAULT_INITIAL_VALUE = 9999;
     static const int DEFAULT_JUMP_VALUE = 100;
 
+    /**
+     * The initial value that the JumpPrime object was seeded with.
+     */
     unsigned int initialNumber;
+
+    /**
+     * The current value of the JumpPrime object.
+     */
     unsigned int mainNumber;
 
     // for tracking the object's state
@@ -125,6 +135,43 @@ public:
      */
     JumpPrime(unsigned int initValue = DEFAULT_INITIAL_VALUE,
               unsigned int jumpBound = DEFAULT_JUMP_BOUND);
+
+    /**
+     * operator+ adds an integer to the JumpPrime object. This
+     * returns a new JumpPrime object that has the sum of the encapsulated
+     * number and the integer as its seed.
+     * @param addNumber the number to add to the JumpPrime object
+     * @return a new JumpPrime object that encapsulates the sum of the
+     * encapsulated number and the integer.
+     */
+    JumpPrime operator+(int addNumber);
+
+    /**
+     * opreator+ adds a JumpPrime object to the JumpPrime object. This
+     * returns a new JumpPrime object that has the sum of the encapsulated
+     * numbers as its seed.
+     * @param jumpAdd the JumpPrime object to add to this
+     * @return a new JumpPrime object that encapsulates the sum of the
+     * encapsulated numbers.
+     */
+    JumpPrime operator+(JumpPrime const& jumpAdd);
+
+    /**
+     * operator+= adds an integer to the JumpPrime object and adds it to
+     * the JumpPrime object
+     * @param addNumber the number to add to the JumpPrime object
+     * @return the JumpPrime object, reset, with stuff added
+     */
+    JumpPrime& operator+=(int addNumber);
+
+    /**
+     * operator+= adds a the encapsulated number of the given JumpPrime object
+     * and adds it to the JumpPrime object.
+     * @param jumpAdd the JumpPrime object to add to this
+     * @return the JumpPrime object, reset, with stuff added
+     */
+    JumpPrime& operator+=(JumpPrime const& jumpAdd);
+
 
     /**
      * up returns the next highest prime number from the number stored in the
