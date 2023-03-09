@@ -87,6 +87,22 @@ bool JumpPrime::operator!=(const JumpPrime &jumpCompare) const {
     return !(*this == jumpCompare);
 }
 
+bool JumpPrime::operator>(const JumpPrime &jumpCompare) const {
+    return (this->mainNumber > jumpCompare.mainNumber);
+}
+
+bool JumpPrime::operator>=(const JumpPrime &jumpCompare) const {
+    return (this->mainNumber >= jumpCompare.mainNumber);
+}
+
+bool JumpPrime::operator<(const JumpPrime &jumpCompare) const {
+    return (this->mainNumber < jumpCompare.mainNumber);
+}
+
+bool JumpPrime::operator<=(const JumpPrime &jumpCompare) const {
+    return (this->mainNumber <= jumpCompare.mainNumber);
+}
+
 JumpPrime JumpPrime::operator+(int addNumber) {
     unsigned int tempValue;
 
@@ -220,6 +236,8 @@ JumpPrime operator+(int addNumber, const JumpPrime &jumpAdd) {
 
     return newJP;
 }
+
+
 
 
 

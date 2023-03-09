@@ -153,6 +153,13 @@ public:
     bool operator!=(const JumpPrime &jumpCompare) const;
 
 
+    // TODO: write comments for methods
+    bool operator>(const JumpPrime &jumpCompare) const;
+    bool operator>=(const JumpPrime &jumpCompare) const;
+    bool operator<(const JumpPrime &jumpCompare) const;
+    bool operator<=(const JumpPrime &jumpCompare) const;
+
+
     /**
      * operator+ adds an integer to the JumpPrime object. This
      * returns a new JumpPrime object that has the sum of the encapsulated
