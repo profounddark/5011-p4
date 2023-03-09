@@ -83,6 +83,10 @@ void jumpPrimeTest() {
 
 }
 
+void duelingTest() {
+
+}
+
 int main() {
     jumpPrimeTest();
 

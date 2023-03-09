@@ -109,6 +109,8 @@ public:
     /// @return A pointer to the DuelingJP object with the content.
     DuelingJP &operator=(DuelingJP && sourceObject);
 
+    bool operator==(const DuelingJP& sourceObject);
+
     /// countCollisions will run a single pass test through the list of
     /// JumpPrime objects, identifying any instances where two objects have
     /// the same value.

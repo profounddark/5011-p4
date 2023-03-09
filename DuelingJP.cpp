@@ -120,6 +120,19 @@ DuelingJP &DuelingJP::operator=(DuelingJP &&sourceObject) {
     return *this;
 }
 
+bool DuelingJP::operator==(const DuelingJP &sourceObject) {
+    bool returnValue = true;
+    if (this->listSize == sourceObject.listSize) {
+        int i = 0;
+        while ((returnValue == true) && (i < this->listSize)) {
+            returnValue = (this->jumperList[i] == sourceObject.jumperList[i]);
+            i++;
+        }
+
+    }
+    return returnValue;
+}
+
 int DuelingJP::countCollisions(bool testUp) {
 
     struct CollisionCounter {
@@ -202,6 +215,8 @@ int DuelingJP::countInversions() {
 int DuelingJP::getSize() const {
     return listSize;
 }
+
+
 
 
 
