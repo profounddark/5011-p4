@@ -170,7 +170,24 @@ public:
      */
     DuelingJP operator+(const DuelingJP& addObject) const;
 
-    // TODO: Write this comment
+    /**
+     * Adds a JumpPrime object to the contents of a DuelingJP object. This
+     * yields a new DuelingJP object with a size increased by one.
+     * @param addJP the JumpPrime object to add to the DuelingJP object.
+     * @return a new DuelingJP object with a list of JumpPrime objects made
+     * from the encapsulated numbers of the component DuelingJP object and
+     * the JumpPrime object.
+     */
+    DuelingJP operator+(const JumpPrime& addJP) const;
+
+    /**
+     * Add the contents of a DuelingJP object to the existing object.
+     * The resulting DuelingJP object will contain the previously encapsulated
+     * JumpPrime objects along with copies of the JumpPrime objects in the
+     * operand DuelingJP object.
+     * @param addObject the DuelingJP object to add
+     * @return a reference to the LHS DuelingJP object
+     */
     DuelingJP operator+=(const DuelingJP& addObject);
 
 

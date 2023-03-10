@@ -162,6 +162,22 @@ DuelingJP DuelingJP::operator+(const DuelingJP &addObject) const {
     return returnValue;
 }
 
+DuelingJP DuelingJP::operator+(const JumpPrime &addJP) const {
+    int newSize = this->listSize + 1;
+    int* newArray = new int[newSize];
+
+    for (int i = 0; i < this->listSize; i++) {
+        newArray[i] = this->jumperList[i].getCurrentValue();
+    }
+    newArray[newSize] = addJP.getCurrentValue();
+
+    DuelingJP returnValue(newArray, newSize);
+
+    delete[] newArray;
+
+    return returnValue;
+}
+
 DuelingJP DuelingJP::operator+=(const DuelingJP &addObject) {
     int newSize = this->listSize + addObject.listSize;
     JumpPrime* newArray = new JumpPrime[newSize];
@@ -265,6 +281,8 @@ int DuelingJP::countInversions() {
 int DuelingJP::getSize() const {
     return listSize;
 }
+
+
 
 
 

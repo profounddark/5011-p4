@@ -121,6 +121,7 @@ void duelingTest() {
     const int TEST_ARRAY_2[] = {941, 1843, 2401};
     const int ARRAY_SIZE_2 = 3;
 
+
     DuelingJP djp1(TEST_ARRAY_1, ARRAY_SIZE_1);
     DuelingJP djp2(TEST_ARRAY_2, ARRAY_SIZE_2);
 
@@ -154,6 +155,18 @@ void duelingTest() {
     duelValueOutput(testDJP);
 
     printSeparator();
+
+    // put the block so it will de-reference the JumpPrime
+    {
+        cout << "Testing DJP+JP" << endl;
+        JumpPrime testJP;
+        testDJP = djp1 + testJP;
+        cout << "Expected size: " << ARRAY_SIZE_1 + 1 << endl;
+        duelValueOutput(testDJP);
+    }
+
+    printSeparator();
+
     cout << "Testing DJP+=DJP" << endl;
     testDJP = djp1;
     testDJP += djp1;
