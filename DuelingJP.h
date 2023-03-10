@@ -1,6 +1,6 @@
 // Created by Andrew Asplund
-// Date: 02/07/2023
-// Revision: 1.0
+// Date: 03/09/2023
+// Revision: 2.0
 
 #ifndef INC_5011_P2_DUELINGJP_H
 #define INC_5011_P2_DUELINGJP_H
