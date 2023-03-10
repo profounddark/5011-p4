@@ -60,6 +60,7 @@ class JumpPrime {
     static const unsigned int DEFAULT_JUMP_BOUND = 10;
     static const unsigned int DEFAULT_INITIAL_VALUE = 9999;
     static const int DEFAULT_JUMP_VALUE = 100;
+    static const int LOWER_LIMIT = 100;
 
     /**
      * The initial value that the JumpPrime object was seeded with.
@@ -201,6 +202,8 @@ public:
      * opreator+ adds a JumpPrime object to the JumpPrime object. This
      * returns a new JumpPrime object that has the sum of the encapsulated
      * numbers as its seed.
+     * If the new encapsulated number is below the lower limit for
+     * JumpPrime objects, the returned object will be in a failure state.
      * @param jumpAdd the JumpPrime object to add to this
      * @return a new JumpPrime object that encapsulates the sum of the
      * encapsulated numbers.
@@ -212,6 +215,8 @@ public:
      * operator+ adds a JumpPrime object to an integer. This returns a new
      * JumpPrime object that has teh sum of the encapsulated number
      * and the integer as its seed.
+     * If the new encapsulated number is below the lower limit for
+     * JumpPrime objects, the returned object will be in a failure state.
      * @param addNumber the integer to add
      * @param jumpAdd the JumpPrime object to add
      * @return a JumpPrime object that encapsulates the sum of the integer and
@@ -221,7 +226,9 @@ public:
 
     /**
      * operator+= adds an integer to the JumpPrime object and adds it to
-     * the JumpPrime object
+     * the JumpPrime object. If the new encapsulated number is below
+     * the lower limit for JumpPrime objects, the JumpPrime object will
+     * be shifted to a failure state.
      * @param addNumber the number to add to the JumpPrime object
      * @return the JumpPrime object, reset, with stuff added
      */
@@ -229,7 +236,9 @@ public:
 
     /**
      * operator+= adds a the encapsulated number of the given JumpPrime object
-     * and adds it to the JumpPrime object.
+     * and adds it to the JumpPrime object. If the new encapsulated number is
+     * below the lower limit for JumpPrime objects, the JumpPrime object will
+     * be shifted to a failure state.
      * @param jumpAdd the JumpPrime object to add to this
      * @return the JumpPrime object, reset, with stuff added
      */

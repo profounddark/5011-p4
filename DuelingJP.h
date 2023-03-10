@@ -160,6 +160,19 @@ public:
      */
     bool operator<=(const DuelingJP& compareObject) const;
 
+    /**
+     * Adds the contents of two DuelingJP objects together. The resulting
+     * DuelingJP object will contain an array of JumpPrime objects that
+     * encapsulate the same number as the originating DuelingJP objects.
+     * @param addObject the DuelingJP to add to the operand.
+     * @return a new DuelingJP object with a list of JumpPrime objects made
+     * from the encapsulated numbers of the component DuelingJP objects.
+     */
+    DuelingJP operator+(const DuelingJP& addObject) const;
+
+    // TODO: Write this comment
+    DuelingJP operator+=(const DuelingJP& addObject);
+
 
 
     /// countCollisions will run a single pass test through the list of
@@ -170,7 +183,7 @@ public:
     /// @return The number of JumpPrime objects that collided.
     int countCollisions(bool testUp = true);
 
-    /// coutInversions will go through both the up() and down() methods of
+    /// countInversions will go through both the up() and down() methods of
     /// every JumpPrime object in the DuelingJP object and count the number
     /// of unique times an up() result equals a down() result.
     /// @return The number of JumpPrime object inversions.

@@ -144,6 +144,42 @@ bool DuelingJP::operator<=(const DuelingJP &compareObject) const {
     return (this->listSize <= compareObject.listSize);
 }
 
+DuelingJP DuelingJP::operator+(const DuelingJP &addObject) const {
+    int newSize = this->listSize + addObject.listSize;
+    int* newArray = new int[newSize];
+    for (int i = 0; i < this->listSize; i++) {
+        newArray[i] = this->jumperList[i].getCurrentValue();
+    }
+    for (int j = 0; j < addObject.listSize; j++) {
+        newArray[j + this->listSize] = addObject.jumperList[j].getCurrentValue();
+    }
+    DuelingJP returnValue(newArray, newSize);
+
+    delete[] newArray;
+
+    return returnValue;
+}
+
+DuelingJP DuelingJP::operator+=(const DuelingJP &addObject) {
+    int newSize = this->listSize + addObject.listSize;
+    JumpPrime* newArray = new JumpPrime[newSize];
+    for (int i = 0; i < this->listSize; i++) {
+        newArray[i] = this->jumperList[i];
+    }
+    for (int j = 0; j < addObject.listSize; j++) {
+        newArray[j + this->listSize] = addObject.jumperList[j];
+    }
+
+    // swap the newly constructed array with the old one
+    JumpPrime* tempArray = this->jumperList;
+    this->jumperList = newArray;
+
+    // delete the old one
+    delete[] tempArray;
+
+    return *this;
+}
+
 int DuelingJP::countCollisions(bool testUp) {
 
     struct CollisionCounter {
@@ -226,6 +262,8 @@ int DuelingJP::countInversions() {
 int DuelingJP::getSize() const {
     return listSize;
 }
+
+
 
 
 

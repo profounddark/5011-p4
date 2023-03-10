@@ -62,7 +62,7 @@ void JumpPrime::jumpNumber(int jumpValue) {
 JumpPrime::JumpPrime(unsigned int initValue, unsigned int jumpBound) {
 
     // less than four digits
-    if (initValue < 100) {
+    if (initValue < LOWER_LIMIT) {
         currentState = Failed;
 
     }
@@ -126,17 +126,24 @@ JumpPrime JumpPrime::operator+(const JumpPrime &jumpAdd) {
 
 JumpPrime& JumpPrime::operator+=(int addNumber) {
     this->initialNumber = this->mainNumber + addNumber;
-    this->currentState = Active;
-    this->reset();
-
+    if (this->initialNumber < LOWER_LIMIT) {
+        this->currentState = Failed;
+    } else {
+        this->currentState = Active;
+        this->reset();
+    }
     return *this;
 }
 
 JumpPrime& JumpPrime::operator+=(const JumpPrime &jumpAdd) {
 
     this->initialNumber = this->mainNumber + jumpAdd.mainNumber;
-    this->currentState = Active;
-    this->reset();
+    if (this->initialNumber < LOWER_LIMIT) {
+        this->currentState = Failed;
+    } else {
+        this->currentState = Active;
+        this->reset();
+    }
 
     return *this;
 }

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "JumpPrime.h"
+#include "DuelingJP.h"
 
 using std::cout;
 using std::endl;
@@ -9,10 +10,15 @@ void printSeparator() {
 
 }
 
-void jumpValueOutput(JumpPrime testJP) {
+void jumpValueOutput(JumpPrime& testJP) {
     cout << "JumpPrime encapsulated value: " << testJP.getCurrentValue() << endl;
     cout << "JumpPrime up value: " << testJP.up() << endl;
     cout << "JumpPrime down value: " << testJP.down() << endl;
+}
+
+void duelValueOutput(DuelingJP& testDJP) {
+    cout << "DuelingJP size: " << testDJP.getSize() << endl;
+    cout << "DuelingJP number of collisions: " << testDJP.countCollisions() << endl;
 }
 
 void jumpPrimeTest() {
@@ -71,6 +77,10 @@ void jumpPrimeTest() {
         << " JP object." << endl;
     cout << "Test equal: " << (jp1 == jp2) << endl;
     cout << "Test not-equal: " << (jp1 != jp2) << endl;
+    cout << "Test greater than: " << (jp1 > jp2) << endl;
+    cout << "Test greater than equal: " << (jp1 >= jp2) << endl;
+    cout << "Test less than: " << (jp1 < jp2) << endl;
+    cout << "Test less than equal: " << (jp1 <= jp2) << endl;
 
     printSeparator();
 
@@ -80,15 +90,29 @@ void jumpPrimeTest() {
     testJP = JumpPrime(TEST_VALUE_1);
     cout << "Test equal: " << (jp1 == testJP) << endl;
     cout << "Test not-equal: " << (jp1 != testJP) << endl;
+    cout << "Test greater than: " << (jp1 > testJP) << endl;
+    cout << "Test greater than equal: " << (jp1 >= testJP) << endl;
+    cout << "Test less than: " << (jp1 < testJP) << endl;
+    cout << "Test less than equal: " << (jp1 <= testJP) << endl;
+
 
 }
 
 void duelingTest() {
+    const int TEST_ARRAY_1[] = {2488, 2489, 2490, 2505, 2509};
+    const int TEST_ARRAY_2[] = {5045, 5055, 5065, 5080, 5085};
+    const int ARRAY_SIZE = 5;
+
+    DuelingJP jp1(TEST_ARRAY_1, ARRAY_SIZE);
+    DuelingJP jp2(TEST_ARRAY_2, ARRAY_SIZE);
+
+
 
 }
 
 int main() {
     jumpPrimeTest();
+
 
 
     return 0;
