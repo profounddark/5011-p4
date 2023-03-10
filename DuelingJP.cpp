@@ -282,6 +282,23 @@ int DuelingJP::getSize() const {
     return listSize;
 }
 
+DuelingJP operator+(const JumpPrime &addJP, const DuelingJP &addDJP) {
+    int newSize = addDJP.listSize + 1;
+    int* newArray = new int[newSize];
+
+    newArray[0] = addJP.getCurrentValue();
+
+    for (int i = 0; i < addDJP.listSize; i++) {
+        newArray[i+1] = addDJP.jumperList[i].getCurrentValue();
+    }
+
+    DuelingJP returnValue(newArray, newSize);
+
+    delete[] newArray;
+
+    return returnValue;
+}
+
 
 
 

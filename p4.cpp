@@ -160,9 +160,19 @@ void duelingTest() {
     {
         cout << "Testing DJP+JP" << endl;
         JumpPrime testJP;
+        cout << "Adding default JP to DJP object #1 (size 5)." << endl;
         testDJP = djp1 + testJP;
         cout << "Expected size: " << ARRAY_SIZE_1 + 1 << endl;
         duelValueOutput(testDJP);
+
+        printSeparator();
+
+        cout << "Testing JP+DJP" << endl;
+        cout << "Adding DJP object #1 (size 5) to default JP." << endl;
+        testDJP = testJP + djp1;
+        cout << "Expected size: " << ARRAY_SIZE_1 + 1 << endl;
+        duelValueOutput(testDJP);
+
     }
 
     printSeparator();
