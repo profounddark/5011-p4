@@ -44,6 +44,13 @@
  * 4. During the counting of inversions, it is possible for a JumpPrime
  * to jump in between the up(0 and down() call. This is understood and
  * no exceptions are made for it.
+ * 5. A DuelingJP can be added to another DuelingJP object. This yields
+ * a DuelingJP object which has JumpPrime objects that have encapsulated
+ * numbers that duplicate the encapsulated numbers of the JumpPrime objects
+ * in the DuelingJP objects.
+ * 6. A JumpPrime object can be added to a DuelingJP object. This increases
+ * the size of the DuelingJP by one, adding a new JumpPrime object at the end
+ * of the DuelingJP object.
  */
 
 /// DuelingJP is a container for JumpPrime objects used for testing.

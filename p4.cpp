@@ -6,7 +6,7 @@ using std::cout;
 using std::endl;
 
 void printSeparator() {
-    cout << "*------------------------*" << endl;
+    cout << "*---------------------------*" << endl;
 
 }
 
@@ -179,9 +179,6 @@ int main() {
     jumpPrimeTest();
 
     duelingTest();
-
-
-
 
     return 0;
 }
