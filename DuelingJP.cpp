@@ -145,8 +145,10 @@ bool DuelingJP::operator<=(const DuelingJP &compareObject) const {
 }
 
 DuelingJP DuelingJP::operator+(const DuelingJP &addObject) const {
+
     int newSize = this->listSize + addObject.listSize;
     int* newArray = new int[newSize];
+
     for (int i = 0; i < this->listSize; i++) {
         newArray[i] = this->jumperList[i].getCurrentValue();
     }

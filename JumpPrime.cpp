@@ -103,7 +103,7 @@ bool JumpPrime::operator<=(const JumpPrime &jumpCompare) const {
     return (this->mainNumber <= jumpCompare.mainNumber);
 }
 
-JumpPrime JumpPrime::operator+(int addNumber) {
+JumpPrime JumpPrime::operator+(int addNumber) const {
     unsigned int tempValue;
 
     tempValue = this->mainNumber + addNumber;
@@ -113,7 +113,7 @@ JumpPrime JumpPrime::operator+(int addNumber) {
     return returnJump;
 }
 
-JumpPrime JumpPrime::operator+(const JumpPrime &jumpAdd) {
+JumpPrime JumpPrime::operator+(const JumpPrime &jumpAdd) const {
 
     unsigned int tempValue;
 

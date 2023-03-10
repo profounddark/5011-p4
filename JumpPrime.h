@@ -196,7 +196,7 @@ public:
      * @return a new JumpPrime object that encapsulates the sum of the
      * encapsulated number and the integer.
      */
-    JumpPrime operator+(int addNumber);
+    JumpPrime operator+(int addNumber) const;
 
     /**
      * opreator+ adds a JumpPrime object to the JumpPrime object. This
@@ -208,7 +208,7 @@ public:
      * @return a new JumpPrime object that encapsulates the sum of the
      * encapsulated numbers.
      */
-    JumpPrime operator+(JumpPrime const& jumpAdd);
+    JumpPrime operator+(JumpPrime const& jumpAdd) const;
 
 
     /**
