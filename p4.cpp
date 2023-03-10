@@ -112,7 +112,7 @@ void duelingTest() {
     DuelingJP testDJP(TEST_ARRAY_1, ARRAY_SIZE_1);
 
     cout << "Testing comparison." << endl;
-    cout << "Comparing JP object #1 (size 5) to JP object #2 (size 3)." << endl;
+    cout << "Comparing DJP object #1 (size 5) to DJP object #2 (size 3)." << endl;
     cout << "Test equal: " << (djp1 == djp2) << endl;
     cout << "Test not-equal: " << (djp1 != djp2) << endl;
     cout << "Test greater than: " << (djp1 > djp2) << endl;
@@ -123,7 +123,7 @@ void duelingTest() {
     printSeparator();
 
     cout << "Testing comparison (#2)." << endl;
-    cout << "Comparing JP object #1 (size 5) to duplciate JP object (size 5)." << endl;
+    cout << "Comparing DJP object #1 (size 5) to duplicate DJP object (size 5)." << endl;
     cout << "Test equal: " << (djp1 == testDJP) << endl;
     cout << "Test not-equal: " << (djp1 != testDJP) << endl;
     cout << "Test greater than: " << (djp1 > testDJP) << endl;
