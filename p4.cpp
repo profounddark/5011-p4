@@ -101,19 +101,18 @@ void jumpPrimeTest() {
 
 void duelingTest() {
     const int TEST_ARRAY_1[] = {2488, 2489, 2490, 2505, 2509};
-    const int TEST_ARRAY_2[] = {5045, 5055, 5065, 5080, 5085};
-    const int ARRAY_SIZE = 5;
+    const int ARRAY_SIZE_1 = 5;
 
-    const int SMALL_ARRAY[] = {941, 1843, 2401};
-    const int SMALL_ARRAY_SIZE = 3;
+    const int TEST_ARRAY_2[] = {941, 1843, 2401};
+    const int ARRAY_SIZE_2 = 3;
 
-    DuelingJP djp1(TEST_ARRAY_1, ARRAY_SIZE);
-    DuelingJP djp2(TEST_ARRAY_2, ARRAY_SIZE);
+    DuelingJP djp1(TEST_ARRAY_1, ARRAY_SIZE_1);
+    DuelingJP djp2(TEST_ARRAY_2, ARRAY_SIZE_2);
 
-    DuelingJP testDJP(SMALL_ARRAY, SMALL_ARRAY_SIZE);
+    DuelingJP testDJP(TEST_ARRAY_1, ARRAY_SIZE_1);
 
     cout << "Testing comparison." << endl;
-    cout << "Comparing JP object #1 (size 5) to JP object #2 (size 5)." << endl;
+    cout << "Comparing JP object #1 (size 5) to JP object #2 (size 3)." << endl;
     cout << "Test equal: " << (djp1 == djp2) << endl;
     cout << "Test not-equal: " << (djp1 != djp2) << endl;
     cout << "Test greater than: " << (djp1 > djp2) << endl;
@@ -124,7 +123,7 @@ void duelingTest() {
     printSeparator();
 
     cout << "Testing comparison (#2)." << endl;
-    cout << "Comparing JP object #1 (size 5) to small JP object (size 3)." << endl;
+    cout << "Comparing JP object #1 (size 5) to duplciate JP object (size 5)." << endl;
     cout << "Test equal: " << (djp1 == testDJP) << endl;
     cout << "Test not-equal: " << (djp1 != testDJP) << endl;
     cout << "Test greater than: " << (djp1 > testDJP) << endl;
@@ -134,12 +133,26 @@ void duelingTest() {
 
     printSeparator();
 
+    cout << "Testing DJP+DJP" << endl;
+    testDJP = djp1 + djp2;
+    cout << "Expected size: " << ARRAY_SIZE_1 + ARRAY_SIZE_2 << endl;
+    duelValueOutput(testDJP);
+
+    printSeparator();
+    cout << "Testing DJP+=DJP" << endl;
+    testDJP = djp1;
+    testDJP += djp1;
+    cout << "Expected size: " << ARRAY_SIZE_1 * 2 << endl;
+    duelValueOutput(testDJP);
+
 }
 
 int main() {
     jumpPrimeTest();
 
     duelingTest();
+
+
 
 
     return 0;

@@ -174,6 +174,7 @@ DuelingJP DuelingJP::operator+=(const DuelingJP &addObject) {
 
     // swap the newly constructed array with the old one
     JumpPrime* tempArray = this->jumperList;
+    this->listSize = newSize;
     this->jumperList = newArray;
 
     // delete the old one
