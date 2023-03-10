@@ -124,6 +124,30 @@ JumpPrime JumpPrime::operator+(const JumpPrime &jumpAdd) const {
     return returnJump;
 }
 
+JumpPrime JumpPrime::operator++() {
+
+    this->initialNumber = this->mainNumber + 1;
+    if (this->initialNumber < LOWER_LIMIT) {
+        this->currentState = Failed;
+    } else {
+        this->currentState = Active;
+        this->reset();
+    }
+    return *this;
+}
+
+const JumpPrime JumpPrime::operator++(int dummy) {
+    JumpPrime const tempJP = *this;
+    this->initialNumber = this->mainNumber + 1;
+    if (this->initialNumber < LOWER_LIMIT) {
+        this->currentState = Failed;
+    } else {
+        this->currentState = Active;
+        this->reset();
+    }
+    return tempJP;
+}
+
 JumpPrime& JumpPrime::operator+=(int addNumber) {
     this->initialNumber = this->mainNumber + addNumber;
     if (this->initialNumber < LOWER_LIMIT) {
@@ -243,6 +267,8 @@ JumpPrime operator+(int addNumber, const JumpPrime &jumpAdd) {
 
     return newJP;
 }
+
+
 
 
 

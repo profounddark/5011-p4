@@ -72,6 +72,21 @@ void jumpPrimeTest() {
 
     printSeparator();
 
+    cout << "Testing increment operators." << endl;
+    testJP = jp1;
+    cout << "Outputting pre-increment data." << endl;
+    jumpValueOutput(testJP);
+    cout << "Outputting JP++ data." << endl;
+    testJP++;
+    jumpValueOutput(testJP);
+    cout << "Outputting ++JP data." << endl;
+    ++testJP;
+    jumpValueOutput(testJP);
+
+
+
+    printSeparator();
+
     cout << "Testing comparison." << endl;
     cout << "Comparing " << TEST_VALUE_1 << " JP object to " << TEST_VALUE_2
         << " JP object." << endl;

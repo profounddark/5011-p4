@@ -210,6 +210,21 @@ public:
      */
     JumpPrime operator+(JumpPrime const& jumpAdd) const;
 
+    /**
+     * The prefix increment operator increments the encapsulated number
+     * in the JumpPrime object and resets it.
+     * @return the JumpPrime object after the increment.
+     */
+    JumpPrime operator++();
+
+    /**
+     * The prefix increment operator increments the encapsulated number
+     * in the JumpPrime object and resets it but returns the JumpPrime
+     * object prior to the incrementation.
+     * @return the JumpPrime object prior to the increment.
+     */
+    const JumpPrime operator++(int);
+
 
     /**
      * operator+ adds a JumpPrime object to an integer. This returns a new
